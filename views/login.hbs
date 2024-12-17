@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="кг">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="/css/pages/loginPage/loginStyles.css">
+</head>
+<body>
+<div class="auth-container">
+    <h1>Добро пожаловать!</h1>
+
+    <!-- Форма входа -->
+    <div id="login-form" class="form-container active">
+        <form>
+            <input type="email" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Пароль" required>
+            <button type="button" onclick="handleLogin()">Войти</button>
+        </form>
+        <p class="switch">Нет аккаунта? <a href="#" onclick="switchToRegister()">Зарегистрироваться</a></p>
+    </div>
+
+    <!-- Форма регистрации -->
+    <div id="register-form" class="form-container">
+        <form>
+            <input type="text" id="register-nickname" placeholder="Логин" required>
+            <input type="email" id="register-email" placeholder="Email" required>
+            <input type="password" id="register-password" placeholder="Пароль" required>
+            <button type="button" onclick="handleRegister()">Зарегистрироваться</button>
+        </form>
+        <p class="switch">Уже есть аккаунт? <a href="#" onclick="switchToLogin()">Войти</a></p>
+    </div>
+
+    <a class="comeBack" href="/" onclick="comeBack()">Вернуться на сайт</a>
+
+    <script type="module" src="/scripts/firebase/firebaseauth.js"></script>
+    <script type="module" src="/scripts/loginPage.js"></script>
+</div>
+</body>
+</html>

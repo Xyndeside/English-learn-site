@@ -1,0 +1,20 @@
+{
+  "name": "lancon",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2",
+    "gsap": "^3.12.5",
+    "hbs": "^4.2.0",
+    "lightgallery": "^2.8.2",
+    "nodemon": "^3.1.7",
+    "swiper": "^11.1.15"
+  }
+}

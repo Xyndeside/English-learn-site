@@ -1,0 +1,26 @@
+.questions {
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    &__item {
+        max-width: 730px;
+        
+        & > details {
+            cursor: pointer;
+            
+            & > summary {
+                font-size: 24px;
+                margin-bottom: 10px;
+                color: var(--color-accent);
+            }
+            
+            & > p {
+                margin-left: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

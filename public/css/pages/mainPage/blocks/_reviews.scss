@@ -1,0 +1,25 @@
+.reviews {
+    display: flex;
+    justify-content: space-between;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    &__title {
+        color: var(--color-accent);
+    }
+    
+    &__description {
+        max-width: 400px;
+    }
+
+    &__name {
+        font-size: 20px;
+        color: var(--color-red);
+    }
+}

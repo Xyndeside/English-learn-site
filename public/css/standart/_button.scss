@@ -1,0 +1,16 @@
+.button {
+    @include flex-center;
+    @include reset-button;
+    
+    padding: var(--button-padding);
+    height: var(--button-height);
+    width: var(--button-width);
+    background-color: var(--button-color);
+    color: var(--color-white);
+    font-size: 17px;
+    border-radius: var(--button-border-radius);
+    
+    &:hover {
+        background-color: #ecd013;
+    }
+}

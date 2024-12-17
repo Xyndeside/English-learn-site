@@ -1,0 +1,37 @@
+.articles {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 760px;
+    padding: 40px 0;
+    
+    h1, h2 {
+        color: var(--color-accent);
+    }
+    
+    h2 {
+        font-size: 24px;
+        margin-top: 30px;
+    }
+    
+    ul {
+        list-style: disc;
+        margin-left: 10px;
+    }
+    
+    &__image {
+        margin: 0 auto;
+    }
+    
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+}

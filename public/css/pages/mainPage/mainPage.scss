@@ -1,0 +1,18 @@
+@import "../../standart/normalize",
+"../../standart/fonts",
+"../../standart/mixins",
+"../../standart/media",
+"../../standart/variables",
+"../../standart/utils",
+"../../standart/globals",
+"../../standart/button";
+
+@import "../../partials/header",
+"blocks/hero",
+"blocks/section",
+"blocks/news",
+"blocks/reviews",
+"blocks/questions",
+"blocks/promoVideo",
+"blocks/gallery",
+"../../partials/footer";

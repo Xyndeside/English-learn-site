@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/pages/talkPage/talkPage.css">
+    <title>Talk</title>
+</head>
+<body>
+    {{>header}}
+
+    <main class="content">
+        <div class="talk container">
+            <div class="talk__header">
+                <h1 class="talk__title">Чат</h1>
+            </div>
+
+            <div class="talk__body">
+                <div class="talk__body-wrapper">
+                    <div class="talk__body-card myCard">
+                        <img
+                          class="talk__body-card__avatar"
+                          src="/images/profilePage/default-avatar.jpg"
+                          alt=""
+                          width="100" height="100" loading="lazy"
+                        />
+
+                        <h3 class="talk__body-card__nickname">Вы</h3>
+                    </div>
+
+                    <div class="talk__body-buttons">
+                        <button
+                            class="talk__body-button button"
+                            type="button"
+                        >
+                            Выберите свой язык
+                        </button>
+                        <button
+                                class="talk__body-button button"
+                                type="button"
+                        >
+                            Выберите изучаемый язык
+                        </button>
+                    </div>
+
+                    <div class="talk__body-card otherCard">
+                        <img
+                                class="talk__body-card__avatar"
+                                src="/images/profilePage/default-avatar.jpg"
+                                alt=""
+                                width="100" height="100" loading="lazy"
+                        />
+                        <h3 class="talk__body-card__nickname">Собеседник</h3>
+                    </div>
+                </div>
+
+                <div class="talk__body-textChat">
+                    <h2 class="talk__body-textChat__title">Текстовый чат</h2>
+
+                    <div class="talk__body-textChat__input">
+                        <input type="text" id="textChat-input" placeholder="Начните писать...">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {{>footer}}
+</body>
+</html>

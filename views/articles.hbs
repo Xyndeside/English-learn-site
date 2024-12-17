@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/pages/articlesPage/articlesPage.css">
+    <title>Articles</title>
+</head>
+<body>
+    {{>header}}
+
+    <main class="content">
+        <div class="articles container">
+            <h1 class="articles__title">Артикли</h1>
+            <p class="articles__text">В русской грамматике нет артиклей, поэтому эта тема считается
+                одной из самых непростых. В уроке расскажем и на понятных примерах покажем,
+                когда ставится определенный артикль the, а в каких случаях употребляется неопределенный
+                артикль a/an или нулевой артикль.</p>
+            <img
+              class="articles__image"
+              src="/images/lessons/articles.png"
+              alt=""
+              width="165" height="165" loading="lazy"
+            />
+            <h2 class="articles__subtitle">Общие правила употребления</h2>
+            <div class="articles__text">
+                <p class="articles__text-item">Основная функция артикля — указывать на определенность
+                    или неопределенность существительного. Поэтому и артиклей в английском языке два —
+                    неопределенный артикль a/an (indefinite article) и определенный артикль the (definite article).
+                    Также есть такое понятие, как нулевой артикль (zero article).</p>
+                <p class="articles__text-item">Выбор одного из артиклей связан с
+                    <a class="articles__text-item__link" href="/">исчисляемостью существительного:</a>
+                </p>
+                <ul class="articles__text-item">
+                    <li class="articles__text-item__point">
+                        <b>неопределенный артикль</b> a/an используется с исчисляемыми существительными в единственном числе;
+                    </li>
+                    <li class="articles__text-item__point">
+                        <b>определенный артикль</b> the может использоваться с исчисляемыми существительными (независимо от их числа) и с неисчисляемыми существительными;
+                    </li>
+                    <li class="articles__text-item__point">
+                        <b>нулевой артикль</b> употребляется с неисчисляемыми существительными или с исчисляемыми во множественном числе.
+                    </li>
+                </ul>
+                <p class="articles__text-item">
+                    I heard a story(исчисляемое существительное в единственном числе). — Я услышал историю.<br>
+                    I liked the films (исчисляемое существительное во множественном числе). — Мне понравились фильмы.<br>
+                    It is good advice (неисчисляемое существительное). — Это хороший совет.
+                </p>
+            </div>
+
+            <div class="articles__buttons">
+                <button
+                    class="articles__button-prev button"
+                    type="button"
+                >
+                    Предыдущий урок
+                </button>
+                <button
+                        class="articles__button-next button"
+                        type="button"
+                >
+                    Следующий урок
+                </button>
+            </div>
+        </div>
+    </main>
+
+    {{>footer}}
+</body>
+</html>

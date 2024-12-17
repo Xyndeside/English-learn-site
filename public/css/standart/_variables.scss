@@ -1,0 +1,26 @@
+:root {
+    --color-accent: #5e5bfb;
+    --color-accent-alt: #7D7AFB;
+    --color-common: #48555b;
+    --color-white: #ffffff;
+    --color-red: #dd3333;
+    --color-pink: #FAEDFF;
+    
+    --button-padding: 18px 21px;
+    --button-color: var(--color-accent);
+    --button-border-radius: 30px;
+    --button-height: 60px;
+    --button-width: 183px;
+    
+    --container-width: 1300px;
+    --container-padding-x: 20px;
+    --section-padding-y: 50px;
+    
+    --font-family-base: 'DM Sans', sans-serif;
+    
+    --transition-duration: 0.3s;
+    
+    @include mobile {
+        --section-padding-y: 20px;
+    }
+}

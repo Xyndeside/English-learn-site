@@ -1,0 +1,48 @@
+.footer {
+    background-color: var(--color-accent);
+    padding: 93px 0 190px 0;
+    
+    &__up {
+        display: flex;
+        justify-content: start;
+        gap: 77px;
+        text-align: center;
+        
+        &-title {
+            font-size: 30px;
+            color: var(--color-white);
+        }
+    }
+    
+    &__down {
+        margin-top: 100px;
+        padding: 0 165px;
+    }
+    
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        color: var(--color-white);
+    }
+    
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        
+        &-title {
+            font-weight: 700;
+        }
+        
+        &-line {
+            height: 2px;
+            width: 100%;
+            background-color: var(--color-white);
+        }
+        
+        &-icons {
+            display: flex;
+            gap: 20px;
+        }
+    }
+}

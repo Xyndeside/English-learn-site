@@ -1,0 +1,618 @@
+@charset "UTF-8";
+/**
+  Нормализация блочной модели
+ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+/**
+  Убираем внутренние отступы слева тегам списков,
+  у которых есть атрибут class
+ */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+  Убираем внешние отступы body и двум другим тегам,
+  у которых есть атрибут class
+ */
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+  Убираем внешние отступы вертикали нужным тегам,
+  у которых есть атрибут class
+ */
+:where(h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+  Убираем стандартный маркер маркированному списку,
+  у которого есть атрибут class
+ */
+:where(ul[class]) {
+  list-style: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+/**
+  Обнуляем вертикальные внешние отступы параграфа,
+  объявляем локальную переменную для внешнего отступа вниз,
+  чтобы избежать взаимодействие с более сложным селектором
+ */
+p {
+  --paragraphMarginBottom: 24px;
+  margin-block: 0;
+}
+
+/**
+  Внешний отступ вниз для параграфа без атрибута class,
+  который расположен не последним среди своих соседних элементов
+ */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+/**
+  Упрощаем работу с изображениями и видео
+ */
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/**
+  Наследуем свойства шрифт для полей ввода
+ */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  height: 100%;
+  /**
+    Убираем скачок интерфейса по горизонтали
+    при появлении / исчезновении скроллбара
+   */
+  scrollbar-gutter: stable;
+}
+
+/**
+  Плавный скролл
+ */
+html,
+:has(:target) {
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  min-height: 100%;
+  /**
+    Унифицированный интерлиньяж
+   */
+  line-height: 1.5;
+}
+
+/**
+  Нормализация высоты элемента ссылки при его инспектировании в DevTools
+ */
+a:where([class]) {
+  display: inline-flex;
+}
+
+/**
+  Курсор-рука при наведении на элемент
+ */
+button,
+label {
+  cursor: pointer;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+ */
+[fill] {
+  fill: currentColor;
+}
+
+[stroke] {
+  stroke: currentColor;
+}
+
+/**
+  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+  Приведение рамок таблиц в классический 'collapse' вид
+ */
+:where(table) {
+  border-collapse: collapse;
+  border-color: currentColor;
+}
+
+/**
+  Удаляем все анимации и переходы для людей,
+  которые предпочитают их не использовать
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("../../fonts/DMSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("../../fonts/DMSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("../../fonts/DMSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --color-accent: #5e5bfb;
+  --color-accent-alt: #7D7AFB;
+  --color-common: #48555b;
+  --color-white: #ffffff;
+  --color-red: #dd3333;
+  --color-pink: #FAEDFF;
+  --button-padding: 18px 21px;
+  --button-color: var(--color-accent);
+  --button-border-radius: 30px;
+  --button-height: 60px;
+  --button-width: 183px;
+  --container-width: 1300px;
+  --container-padding-x: 20px;
+  --section-padding-y: 50px;
+  --font-family-base: "DM Sans", sans-serif;
+  --transition-duration: 0.3s;
+}
+@media (max-width: 767px) {
+  :root {
+    --section-padding-y: 20px;
+  }
+}
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+@media (max-width: 767px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .visible-mobile {
+    display: none !important;
+  }
+}
+
+body {
+  font-size: clamp(13px, 1.0416666667vw, 15px);
+  font-family: var(--font-family-base), sans-serif;
+  font-weight: 400;
+  color: var(--color-common);
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-family-base), sans-serif;
+}
+
+h1, h2 {
+  font-weight: 700;
+  font-size: clamp(35px, 3.0555555556vw, 44px);
+}
+
+h3 {
+  font-weight: 500;
+  font-size: clamp(20px, 1.6666666667vw, 24px);
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  padding: var(--button-padding);
+  height: var(--button-height);
+  width: var(--button-width);
+  background-color: var(--button-color);
+  color: var(--color-white);
+  font-size: 17px;
+  border-radius: var(--button-border-radius);
+}
+.button:hover {
+  background-color: #ecd013;
+}
+
+.header {
+  height: 88px;
+}
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 18px;
+  color: var(--color-accent);
+}
+.header__right {
+  display: flex;
+  gap: 60px;
+}
+.header__menu {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.header__menu-list {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  color: var(--color-common);
+}
+.header__menu-item {
+  position: relative;
+  font-size: 20px;
+}
+.header__menu-dropdown {
+  display: none;
+  position: absolute;
+  width: 120px;
+  top: 100%;
+  right: -60%;
+  background-color: #fff;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.menu:hover .header__menu-dropdown {
+  display: block;
+}
+
+.menu__list {
+  display: flex;
+  flex-direction: column;
+}
+.menu__item {
+  display: block;
+  text-align: center;
+  cursor: pointer;
+}
+.menu__item:hover {
+  background-color: #c3c3c3;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 100px;
+}
+.hero__left {
+  display: flex;
+  flex-direction: column;
+  gap: 43px;
+}
+.hero__title {
+  line-height: 1.4;
+}
+.hero__description {
+  max-width: 550px;
+}
+.hero__right {
+  position: relative;
+}
+.hero__images {
+  display: flex;
+  gap: 28px;
+}
+.hero__promo {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 321px;
+  height: 117px;
+  border-radius: 30px;
+  background-color: var(--color-accent-alt);
+  color: var(--color-white);
+  top: 61%;
+  left: 6%;
+}
+.hero__image:not(:last-child) {
+  margin-bottom: 163px;
+}
+.hero__image:last-child {
+  margin-top: 163px;
+}
+.hero__color-1 {
+  color: #5C5B8F;
+}
+.hero__color-2 {
+  color: #161E64;
+}
+.hero__color-3 {
+  color: var(--color-accent);
+}
+
+.section {
+  padding-block: var(--section-padding-y);
+}
+.section__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+@media (max-width: 500px) {
+  .section__header {
+    margin-bottom: 30px;
+  }
+}
+.section:not(:first-child) .section__body {
+  margin-top: 100px;
+}
+.section__title {
+  color: var(--color-accent);
+}
+
+[data-tooltip] {
+  position: relative;
+  cursor: pointer;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  font-size: 14px;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-accent);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  white-space: nowrap;
+}
+
+[data-tooltip]:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.news__list {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+.news__item {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-left: 10px;
+}
+.news__title {
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--color-accent);
+}
+.news__link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.reviews {
+  display: flex;
+  justify-content: space-between;
+}
+.reviews__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+}
+.reviews__title {
+  color: var(--color-accent);
+}
+.reviews__description {
+  max-width: 400px;
+}
+.reviews__name {
+  font-size: 20px;
+  color: var(--color-red);
+}
+
+.questions__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.questions__item {
+  max-width: 730px;
+}
+.questions__item > details {
+  cursor: pointer;
+}
+.questions__item > details > summary {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--color-accent);
+}
+.questions__item > details > p {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.promoVideo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+.promoVideo__file {
+  width: 80%;
+  height: auto;
+  border-radius: 50px;
+}
+.promoVideo__description {
+  font-size: 20px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.gallery__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+}
+.gallery__item:last-child {
+  margin-top: 30px;
+}
+
+.footer {
+  background-color: var(--color-accent);
+  padding: 93px 0 190px 0;
+}
+.footer__up {
+  display: flex;
+  justify-content: start;
+  gap: 77px;
+  text-align: center;
+}
+.footer__up-title {
+  font-size: 30px;
+  color: var(--color-white);
+}
+.footer__down {
+  margin-top: 100px;
+  padding: 0 165px;
+}
+.footer__list {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-white);
+}
+.footer__item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer__item-title {
+  font-weight: 700;
+}
+.footer__item-line {
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-white);
+}
+.footer__item-icons {
+  display: flex;
+  gap: 20px;
+}
+
+/*# sourceMappingURL=mainPage.css.map */

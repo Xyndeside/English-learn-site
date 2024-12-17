@@ -1,0 +1,68 @@
+.talk {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 200px;
+    gap: 30px;
+    
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        
+        &-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        &-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        &-card {
+            width: 255px;
+            height: 323px;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+            gap: 15px;
+            border-radius: 30px;
+            
+            &__avatar {
+                border-radius: 50%;
+            }
+            
+            &__nickname {
+                color: var(--color-accent);
+            }
+        }
+        
+        &-textChat {
+            width: 100%;
+            height: 315px;
+            border-radius: 30px;
+            background-color: #f5f5f5;
+            padding: 30px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            
+            &__input > input {
+                width: 100%;
+                border: none;
+            }
+        }
+    }
+    
+    h1, h2 {
+        color: var(--color-accent);
+    }
+    
+    h2 {
+        font-size: 25px;
+    }
+}

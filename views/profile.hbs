@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/pages/profilePage/profilePage.css">
+    <title>Profile</title>
+</head>
+<body>
+    {{>header}}
+
+    <main class="content">
+        <div class="profile container">
+            <div class="profile__main">
+                <div class="profile__main-left">
+                    <img
+                            class="profile__main-avatar"
+                            src="/images/profilePage/default-avatar.jpg"
+                            alt=""
+                            width="150" height="150" loading="lazy"
+                    />
+                    <button
+                            class="profile__main-button button"
+                            type="button"
+                    >
+                        Поменять аватарку
+                    </button>
+                    <input type="file" id="avatarInput" accept="image/*" hidden>
+                </div>
+                <div class="profile__main-right">
+                    <h2 id="userName" class="profile__main-name"></h2>
+                    <ul class="profile__main-list">
+                        <li class="profile__main-item">
+                            <p class="profile__main-item__info">42 уровень</p>
+                            <img
+                              class="profile__main-item__icon"
+                              src="/images/icons/level.png"
+                              alt=""
+                              width="57" height="57" loading="lazy"
+                            />
+                            <p class="profile__main-item__count">x365</p>
+                        </li>
+                        <li class="profile__main-item">
+                            <p class="profile__main-item__info">Рейтинг</p>
+                            <img
+                                    class="profile__main-item__icon"
+                                    src="/images/icons/rating.png"
+                                    alt=""
+                                    width="57" height="57" loading="lazy"
+                            />
+                            <p class="profile__main-item__count">1117</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="profile__advantages">
+                <div class="profile__advantages-top">
+                    <h3 class="profile__advantages-title">Персональные достижения</h3>
+                    <a class="profile__advantages-link" href="#">Посмотреть все</a>
+                </div>
+                <ul class="profile__advantages-list">
+                    <li class="profile__advantages-item">
+                        <img
+                          class="profile__advantages-item__image"
+                          src="/images/profilePage/advantages/1.png"
+                          alt=""
+                          width="115" height="115" loading="lazy"
+                        />
+                        <div class="profile__advantages-item__info">
+                            <p class="profile__advantages-item__title"><b>Комментатор</b></p>
+                            <p class="profile__advantages-item__body">Получите 10 лайков за комментарий в разделе лекций или задач</p>
+                        </div>
+                    </li>
+                    <li class="profile__advantages-item">
+                        <img
+                                class="profile__advantages-item__image"
+                                src="/images/profilePage/advantages/2.jpg"
+                                alt=""
+                                width="115" height="115" loading="lazy"
+                        />
+                        <div class="profile__advantages-item__info">
+                            <p class="profile__advantages-item__title"><b>Комментатор</b></p>
+                            <p class="profile__advantages-item__body">Получите 10 лайков за комментарий в разделе лекций или задач</p>
+                        </div>
+                    </li>
+                    <li class="profile__advantages-item">
+                        <img
+                                class="profile__advantages-item__image"
+                                src="/images/profilePage/advantages/3.jpg"
+                                alt=""
+                                width="115" height="115" loading="lazy"
+                        />
+                        <div class="profile__advantages-item__info">
+                            <p class="profile__advantages-item__title"><b>Комментатор</b></p>
+                            <p class="profile__advantages-item__body">Получите 10 лайков за комментарий в разделе лекций или задач</p>
+                        </div>
+                    </li>
+                    <li class="profile__advantages-item">
+                        <img
+                                class="profile__advantages-item__image"
+                                src="/images/profilePage/advantages/4.png"
+                                alt=""
+                                width="115" height="115" loading="lazy"
+                        />
+                        <div class="profile__advantages-item__info">
+                            <p class="profile__advantages-item__title"><b>Комментатор</b></p>
+                            <p class="profile__advantages-item__body">Получите 10 лайков за комментарий в разделе лекций или задач</p>
+                        </div>
+                    </li>
+                    <li class="profile__advantages-item">
+                        <img
+                                class="profile__advantages-item__image"
+                                src="/images/profilePage/advantages/5.jpg"
+                                alt=""
+                                width="115" height="115" loading="lazy"
+                        />
+                        <div class="profile__advantages-item__info">
+                            <p class="profile__advantages-item__title"><b>Комментатор</b></p>
+                            <p class="profile__advantages-item__body">Получите 10 лайков за комментарий в разделе лекций или задач</p>
+                        </div>
+                    </li>
+                    <li class="profile__advantages-item">
+                        <img
+                                class="profile__advantages-item__image"
+                                src="/images/profilePage/advantages/6.png"
+                                alt=""
+                                width="115" height="115" loading="lazy"
+                        />
+                        <div class="profile__advantages-item__info">
+                            <p class="profile__advantages-item__title"><b>Комментатор</b></p>
+                            <p class="profile__advantages-item__body">Получите 10 лайков за комментарий в разделе лекций или задач</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="profile__notifications">
+                <h3 class="profile__notifications-title">Уведомления</h3>
+                <ul class="profile__notifications-list">
+                    <li class="profile__notifications-item">
+                        <div class="profile__notifications-item__header">
+                            <p class="profile__notifications-item__name">Администрация</p>
+                            <p class="profile__notifications-item__date">27 мая, 07:38</p>
+                        </div>
+                        <div class="profile__notifications-item__body">
+                            <p>Вы получили доступ к новым возможностям!</p>
+                        </div>
+                    </li>
+                    <li class="profile__notifications-item">
+                        <div class="profile__notifications-item__header">
+                            <p class="profile__notifications-item__name">Администрация</p>
+                            <p class="profile__notifications-item__date">20 сентября, 15:12</p>
+                        </div>
+                        <div class="profile__notifications-item__body">
+                            <p>Вы получили доступ к новым возможностям!</p>
+                        </div>
+                    </li>
+                    <li class="profile__notifications-item">
+                        <div class="profile__notifications-item__header">
+                            <p class="profile__notifications-item__name">Администрация</p>
+                            <p class="profile__notifications-item__date">12 декабря, 17:23</p>
+                        </div>
+                        <div class="profile__notifications-item__body">
+                            <p>Вы получили доступ к новым возможностям!</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <button
+                id="logOut_btn"
+                class="button"
+                type="button"
+            >
+                Выйти из аккаунта
+            </button>
+        </div>
+    </main>
+
+    {{>footer}}
+
+    <script type="module" src="/scripts/profilePage.js"></script>
+</body>
+</html>
